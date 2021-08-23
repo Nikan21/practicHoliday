@@ -99,35 +99,85 @@ console.log(result);
 
 /* 5 */
 for (let i = 25; i >= 0; i--) {
-    console.log(i);
+  console.log(i);
 }
 
 /* 6 */
 for (let i = 0; i <= 20; i += 5) {
-    console.log(i);
+  console.log(i);
 }
 
 /* 6* */
 for (let i = 0; i <= 20; i++) {
-    if (i % 5 === 0){
-        console.log(i);
-    }continue;
+  if (i % 5 === 0) {
+    console.log(i);
+  }
+  continue;
 }
 
 /* 7* */
 for (let x = -2; x <= 2; x += 0.5) {
-    let y = -3 * Math.pow(x, 2) + 5 * x - 2;
-    console.log(`y = ${y}`);
+  let y = -3 * Math.pow(x, 2) + 5 * x - 2;
+  console.log(`y = ${y}`);
 }
 
 /* 8* */
-function solveAnExample (){
-    let result1 = Number(prompt('Введите ответ на данное уровнение -> 2 + 2 * 2 = ?'));
-    while (result1 !== 6){
-        result1 = Number(prompt('Введите ответ на данное уровнение -> 2 + 2 * 2 = ?'));
-    }return 'Congratulation!!!'
+function solveAnExample() {
+  let result1 = Number(
+    prompt("Введите ответ на данное уровнение -> 2 + 2 * 2 = ?")
+  );
+  while (result1 !== 6) {
+    result1 = Number(
+      prompt("Введите ответ на данное уровнение -> 2 + 2 * 2 = ?")
+    );
+  }
+  return "Congratulation!!!";
 }
 
 /* Tasks conditions */
 
-/* 1 */
+/* 1, 2, 2* */
+function askNumber() {
+  const Number1 = Number(prompt("Введите число"));
+  if (Number1 === 10) {
+    alert("Верно");
+  }else if(5 < Number1 & Number1 < 15){
+      alert ('Привет');
+  }else if(5 < Number1 || Number1 < 10){ 
+      alert('Всегда true')   
+  }else{
+      alert('Не верно');
+  }
+}
+
+/* 3 */
+function askQuestions (){
+    let result1 = Number(prompt('Сколько дней в году? (Не в высокосном)'));
+    if (result1 === 365){
+        alert('Верно :)')
+    }else{
+        alert('Не верно :(')
+    }
+}
+
+/* 4* */
+function pizzaOrder(){
+    let summCoastPizza = prompt('Укажите какокой вес пиццы Вы хотите заказать (указать в граммах)');
+    if (summCoastPizza < 1000){
+        const resultPizzaWithoutDiscount = summCoastPizza / 100 * 30;
+        alert (`К оплате ${resultPizzaWithoutDiscount}`);
+    }else{
+        const resultPizzaWithDiscount = (summCoastPizza / 100 * 30) - (summCoastPizza / 100 * 30 * 0.03);
+        alert (`К оплате со скдикой ${resultPizzaWithDiscount}`);
+    }
+}
+
+/* 5* */
+function simpleOrNot (Number2){
+    /* let Number2 = Number(prompt('Укажите число')); */
+    if ((Number2 % 2 === 0 || Number2 % 3 === 0 || Number2 % 5 === 0) & (Number2 !== 2 & Number2 !== 3 & Number2 !== 5) || Number2 === 1){
+        return "Не простое";
+    }else{
+        return 'Простое'
+    }
+}
